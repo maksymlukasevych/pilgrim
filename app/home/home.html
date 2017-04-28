@@ -1,0 +1,50 @@
+<h1>All Guides</h1>
+		
+<div class = "panel panel-primary">
+	<div class = "panel-heading">
+		<h5>MY CART</h5>
+	</div>
+	<div class = "panel-body table-responsive">
+		<table class = "table">
+				<thead>
+					<tr>
+						<th>City</th>
+					<th>Title</th>
+						<th>qty</th>
+						<th>Price</th>
+								
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "cart in carts" ng-init = "setTotals(cart)">
+						<td>{{cart.location}}</td>
+						<td>{{cart.title}}</td>
+						<td>{{cart.qty}}</td>
+						<td>{{cart.price}}</td>
+								
+						<td><button type = "button" ng-click = "remove_cart(cart)" class = "btn btn-danger"><span class = "glyphicon glyphicon-remove"></span></button></td>
+							</tr>
+							<tr>
+								<td align = "right">Total</td>
+								<td>{{total}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		
+			
+		<ul class="guide-list">
+    <li class="col-md-3 guide-list-item" ng-repeat="guide in guides">
+        <h2>{{guide.location.city}}</h2>
+		<h2>{{guide.location.country}}</h2>
+		<h2>{{guide.location.state}}</h2>
+		<h2>{{guide.title}}</h2>
+		<h2>{{guide.price}}</h2>
+		<h2>{{guide.qty}}</h2>
+		<!-- <angular-weather city="{{guide.location.city}}"></angular-weather> -->
+        <center><button type = "button" ng-click = "add_cart(guide)"> Add to cart</button></center>
+    </li>
+</ul>
+		
+
